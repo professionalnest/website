@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { Linkedin } from 'lucide-react'
 import Footer from '@/components/Footer'
-import { sendEmailAction } from '@/actions/sendEmailAction'
+import { contactUsSubmissionAction } from '@/actions/sendEmailAction'
 
 export default function Contact() {
 
@@ -30,7 +30,7 @@ export default function Contact() {
                             <button type="submit" className="bg-blue-700 text-white p-2 rounded-md">Send Test Email</button>
                         </form> */}
 
-                        <form  action={sendEmailAction}className="space-y-4 sm:space-y-6">
+                        <form  action={contactUsSubmissionAction}className="space-y-4 sm:space-y-6">
                             <div>
                                 <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
                                     Full name <span className="text-red-500">*</span>

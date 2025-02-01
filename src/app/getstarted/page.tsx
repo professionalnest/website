@@ -1,35 +1,9 @@
 "use client"
-import { useState } from 'react'
 import { Mail } from 'lucide-react'
 import Footer from '@/components/Footer'
-
-interface FormData {
-  fullName: string
-  email: string
-  phone: string
-}
+import { getStartedSubmissionAction } from '@/actions/sendEmailAction'
 
 export default function SignUpForm() {
-  const [formData, setFormData] = useState<FormData>({
-    fullName: '',
-    email: '',
-    phone: ''
-  })
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    // Handle form submission logic here
-    console.log('Form submitted:', formData)
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
   return (
     <div>
     <div className="max-w-2xl mx-auto px-4 py-12">
@@ -37,7 +11,7 @@ export default function SignUpForm() {
         Sign up to get discounts!
       </h1>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
+      <form action={getStartedSubmissionAction} className="space-y-6">
      
         <div>
           <label htmlFor="fullName" className="block text-gray-600 mb-2">
@@ -48,8 +22,6 @@ export default function SignUpForm() {
             id="fullName"
             name="fullName"
             required
-            value={formData.fullName}
-            onChange={handleChange}
             placeholder="Your Name"
             className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
           />
@@ -67,8 +39,6 @@ export default function SignUpForm() {
               id="email"
               name="email"
               required
-              value={formData.email}
-              onChange={handleChange}
               placeholder="Your email"
               className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
             />
@@ -92,8 +62,6 @@ export default function SignUpForm() {
               type="tel"
               id="phone"
               name="phone"
-              value={formData.phone}
-              onChange={handleChange}
               placeholder="Your phone number (Optional)"
               className="w-full pl-24 pr-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
             />
