@@ -16,8 +16,8 @@ export const sendEmailService = async (toAddress:string, emailSubject:string, em
             from: fromAddress,
             to: toAddress,
             subject: emailSubject,
-            text: emailBody,
-            // html: ""
+            // text: ``,
+            html: emailBody
         });
         return true;
     } catch (error) {

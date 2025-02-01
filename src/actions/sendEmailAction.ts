@@ -1,11 +1,21 @@
 'use server'
 
+import { emailConfig } from '@/configs/appConfig';
 import {sendEmailService} from '@/services/emailService';
 
 export const sendEmailAction = async (formData:FormData) => {
-    const toAddress = formData.get('toAddress') as string;
-    const emailSubject = 'Test email from ProNest app';
-    const emailBody = 'This is test email from ProNest app.';
+    const {toAddress} = emailConfig;
+
+    const emailSubject = 'CONTACT US FORM SUBMISSION ON PRONEST WEBSITE';
+
+    const fullName = formData.get('fullName') as string;
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+    const emailBody = `
+            Full Name: ${fullName} <br/>
+            Email: ${email} <br/>
+            Message: ${message} <br/>
+        `;
 
     const emailSendStatus = await sendEmailService(toAddress, emailSubject, emailBody);
     if (emailSendStatus === true) {
