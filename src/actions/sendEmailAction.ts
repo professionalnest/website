@@ -3,7 +3,7 @@
 import { emailConfig } from '@/configs/appConfig';
 import {sendEmailService} from '@/services/emailService';
 
-const sendEmailAction = async (emailSubject, emailBody) => {
+const sendEmailAction = async (emailSubject:string, emailBody:string) => {
     const {toAddress} = emailConfig;
 
     const emailSendStatus = await sendEmailService(toAddress, emailSubject, emailBody);

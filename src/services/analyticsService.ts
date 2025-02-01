@@ -2,7 +2,7 @@ import { getAnalyticsClient, AnalyticsServiceInterface } from '@/controllers/ana
 
 const analyticsClient:AnalyticsServiceInterface = getAnalyticsClient()!;
 
-export const captureAnalyticsEvent = async (captureObj: any): Promise<boolean> => {
+export const captureAnalyticsEvent = async (captureObj: undefined): Promise<boolean> => {
     if (!analyticsClient) {
         return false;
     }

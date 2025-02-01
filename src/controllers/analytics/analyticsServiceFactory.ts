@@ -2,7 +2,7 @@ import { analyticsConfig } from '@/configs/appConfig';
 import { postHogInstance } from './posthog';
 
 export interface AnalyticsServiceInterface { 
-    captureEvent: (captureObj: any) => Promise<boolean>; 
+    captureEvent: (captureObj: undefined) => Promise<boolean>; 
 }
 
 export const getAnalyticsClient = (): AnalyticsServiceInterface|null => {

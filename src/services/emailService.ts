@@ -1,7 +1,8 @@
 import {emailConfig} from '@/configs/appConfig';
-import { EmailServiceInterface, getEmailTransporter } from '@/controllers/email/emailServiceFactory';
+import { getEmailTransporter } from '@/controllers/email/emailServiceFactory';
+import * as nodemailer from 'nodemailer';
 
-const emailTransporter:EmailServiceInterface = getEmailTransporter()!;
+const emailTransporter:nodemailer.Transporter = getEmailTransporter()!;
 
 export const sendEmailService = async (toAddress:string, emailSubject:string, emailBody:string) => {
     

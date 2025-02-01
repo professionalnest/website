@@ -20,10 +20,11 @@ const closePosthogConnection = async () => {
     if (posthogClient) await posthogClient.shutdown()
 }
 
-const captureAnalyticsEvent = async (eventObj:any) => {
+const captureAnalyticsEvent = async (eventObj:undefined) => {
     if (!posthogClient) initializePosthogObject();
     try {
-        posthogClient!.capture(eventObj);
+        console.log(eventObj);
+        // posthogClient!.capture(eventObj);
     } catch(error) {
         console.error(error);
         return false;
