@@ -1,7 +1,6 @@
-import Image from 'next/image'
+"use client"
 import Link from 'next/link'
 import { Linkedin } from 'lucide-react'
-import Footer from '@/components/Footer'
 
 interface TeamMember {
   name: string
@@ -30,7 +29,7 @@ export default function About() {
         <main className="min-h-screen bg-white">
         
             <div className="relative w-full h-[320px]"> 
-                <Image
+                <img
                     src="https://softr-assets-eu-shared.s3.eu-central-1.amazonaws.com/studio/blocks/assets/wave.png"
                     alt="Dark wave"
                     className="object-cover w-full h-full"
@@ -56,7 +55,7 @@ export default function About() {
                     {teamMembers.map((member) => (
                         <div key={member.name} className="flex flex-col items-center text-center text-black">
                             <div className="w-32 h-32 sm:w-48 sm:h-48 relative mb-4 sm:mb-6"> {/* Responsive image size */}
-                                <Image
+                                <img
                                     src={member.image}
                                     alt={member.name}
                                     className="rounded-full object-cover"
@@ -79,7 +78,7 @@ export default function About() {
             <section className="max-w-6xl mx-auto px-4 py-8 sm:py-16">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
                     <div>
-                        <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-black">Can&apos;t find what you are looking for?</h2>
+                        <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-black">Can't find what you are looking for?</h2>
                   <p className="text-gray-600 mb-6 md:mb-0 text-sm sm:text-base">
                       If you cannot find the answer to your question in our FAQ, you can always contact us.
                   </p>
@@ -92,10 +91,6 @@ export default function About() {
               </Link>
           </div>
       </section>
-
-      {/* Contact Section */}
-      
-      <Footer/>
     </main>
     
   )
