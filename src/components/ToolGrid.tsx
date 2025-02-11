@@ -18,10 +18,10 @@ const tools: Tool[] = [
 const ToolsGrid = () => {
     return (
         <section className="px-4 sm:px-6 md:px-12 py-8 md:py-16 bg-color-primary-section">
-            <h2 className="text-2xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-black">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">
                 Our Top Discounts
             </h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-8">
                 {tools.map((tool) => (
                     <div key={tool.id} className="flex items-center justify-center mt-4">
                         <div className="text-center">

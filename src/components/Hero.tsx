@@ -9,12 +9,12 @@ const Hero = () => {
       <div className="max-w-xl w-full md:w-2/5 text-center md:text-left h-full flex flex-col gap-12 md:gap-16">
 
         {/* HERO TITLE */}
-        <h1 className="text-3xl md:text-6xl font-bold leading-7">
+        <h1 className="text-4xl md:text-6xl font-bold leading-7">
           Save Big on Your Favorite AI Tools
         </h1>
 
         {/* HERO SUBTITLE */}
-        <p className="text-lg md:text-2xl text-gray-500 font-nunito">
+        <p className="text-2xl md:text-3xl text-gray-500 font-nunito">
           Unlock huge discounts up to 50% off on the hottest artificial intelligence tools!
         </p>
 
