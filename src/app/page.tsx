@@ -1,7 +1,8 @@
-import WhyChose from "@/components/WhyChose";
+import WhyChose from "@/components/WhyChoose";
 import  Hero  from "@/components/Hero";
 import ToolGrid  from "@/components/ToolGrid";
 import Footer  from "@/components/Footer";
+import BrowseDirectoryC2A from "@/components/BrowseDirectory";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero/>
       <ToolGrid/>
       <WhyChose/>
+      <BrowseDirectoryC2A />
       <Footer/>
     </>
   );
