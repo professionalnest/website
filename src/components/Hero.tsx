@@ -28,8 +28,8 @@ const Hero = () => {
       <div className="w-full md:w-3/5 p-2">
         <div className="h-full justify-self-end">
           <Image
-            src="/guy-with-charts.svg"
-            alt="AI Tools illustration"
+            src="/illustrations/guy-with-charts.svg"
+            alt="Illustration for Hero Section"
             width={600}
             height={500}
           />
