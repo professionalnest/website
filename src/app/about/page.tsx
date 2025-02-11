@@ -6,7 +6,8 @@ interface TeamMember {
   name: string
   role: string
   quote: string
-  image: string
+  image: string,
+  linkedin: string
 }
 
 const teamMembers: TeamMember[] = [
@@ -14,13 +15,15 @@ const teamMembers: TeamMember[] = [
     name: "Ashish Gupta",
     role: "Co-Founder & CEO",
     quote: "When you innovate, you make mistakes. It is best to admit them quickly, and get on with improving your other innovations.",
-    image: "/ashish.jpg"
+    image: "/ashish.jpeg",
+    linkedin: "https://www.linkedin.com/in/ashishgupta23"
   },
   {
     name: "Akshit Singla",
     role: "Co-Founder & CTO",
     quote: "Technology is just a tool. In terms of getting the kids working together and motivating them, the teacher is the most important.",
-    image: "/akshit.jpg"
+    image: "/akshit.jpeg",
+    linkedin: "https://www.linkedin.com/in/akshitsingla"
   }
 ]
 
@@ -45,7 +48,7 @@ export default function About() {
             </section>
 
             {/* Team Section */}
-            <section className="max-w-6xl mx-auto px-4 py-8 sm:py-16 bg-gray-50">
+            <section className="max-w-6xl mx-auto px-4 py-8 sm:py-16 bg-color-primary-section">
                 <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4 text-black">The Team</h2>
                 <p className="text-gray-600 text-center mb-8 sm:mb-12">
                     Meet our small team that make those great products.
@@ -66,7 +69,7 @@ export default function About() {
                             <p className="text-gray-600 mb-4 sm:mb-6 max-w-md text-sm sm:text-base">
                                 {member.quote}
                             </p>
-                            <Link href="https://linkedin.com" className="text-gray-400 hover:text-gray-600">
+                            <Link href="" className="text-gray-400 hover:text-gray-600">
                                 <Linkedin size={24} />
                             </Link>
                         </div>
@@ -75,20 +78,15 @@ export default function About() {
             </section>
 
             {/* Contact Section */}
-            <section className="max-w-6xl mx-auto px-4 py-8 sm:py-16">
-                <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
+            <section className="px-20">
+                <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center gap-6 py-20">
                     <div>
                         <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-black">Can't find what you are looking for?</h2>
                   <p className="text-gray-600 mb-6 md:mb-0 text-sm sm:text-base">
                       If you cannot find the answer to your question in our FAQ, you can always contact us.
                   </p>
               </div>
-              <Link
-                  href="/contact"
-                  className="inline-flex px-6 py-3 bg-[#F5C06B] text-black rounded hover:bg-[#f3b44d] transition-colors"
-              >
-                  Contact us
-              </Link>
+              <div><Link href="/contact" className="px-6 py-3 bg-color-primary rounded">Contact us</Link></div>
           </div>
       </section>
     </main>
