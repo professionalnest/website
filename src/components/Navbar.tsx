@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 
-export default function Navbar() {
+const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -74,3 +74,5 @@ export default function Navbar() {
         </div>
     )
 }
+
+export default Navbar;

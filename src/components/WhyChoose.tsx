@@ -1,4 +1,4 @@
-export default function WhyChose() {
+const WhyChooseComponent = () => {
     const whyChoose = [
         {
             id: "1",
@@ -41,3 +41,5 @@ export default function WhyChose() {
         </section>
     );
 }
+
+export default WhyChooseComponent;
