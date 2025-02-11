@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="container m-auto flex flex-col md:flex-row items-center justify-between py-8 md:py-20 gap-8">
+    <div className="container m-auto flex flex-col md:flex-row items-center justify-between py-14 md:py-20 gap-14 md:px-0 px-12">
       {/* TEXT SIDE */}
-      <div className="max-w-xl w-full md:w-2/5 text-center md:text-left h-full flex flex-col gap-14">
+      <div className="max-w-xl w-full md:w-2/5 text-center md:text-left h-full flex flex-col gap-12 md:gap-16">
 
         {/* HERO TITLE */}
         <h1 className="text-3xl md:text-6xl font-bold leading-7">
@@ -26,14 +26,12 @@ const Hero = () => {
 
       {/* IMAGE SIDE */}
       <div className="w-full md:w-3/5 p-2">
-        <div className="h-full">
+        <div className="h-full justify-self-end">
           <Image
             src="/guy-with-charts.svg"
             alt="AI Tools illustration"
             width={600}
             height={500}
-            className="object-contain"
-            priority
           />
         </div>
       </div>
