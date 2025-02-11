@@ -1,7 +1,5 @@
 "use client"
 
-import Link from 'next/link'
-import { Linkedin } from 'lucide-react'
 import Banner from '@/components/Banner'
 import ContactUsForm from '@/components/ContactUsForm'
 import ContactUsInfo from '@/components/ContactUsInfo'
