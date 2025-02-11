@@ -1,19 +1,52 @@
-import { contactUsSubmissionAction } from '@/actions/sendEmailAction'
+import { contactUsSubmissionAction } from '@/actions/appActions'
+import { useRef, useState } from 'react';
 
 const ContactUsForm = () => {
+    const [errorMsg, setErrorMsg] = useState<string>("");
+    const [successMsg, setSuccessMsg] = useState<string>("");
+    const formRef = useRef<HTMLFormElement>(null);
+  
+    const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+  
+      setSuccessMsg('');
+      setErrorMsg('');
+      const result = await contactUsSubmissionAction(formData);
+      if (result && result.status === true) {
+        setSuccessMsg('Thank you for reaching out! We\'ll get in touch with you shortly.');
+        if (formRef.current) {
+            formRef.current.reset();
+        }
+      } else if (result && result.status === false) {
+        switch(result.errorCode) {
+          case "EMAIL_SEND_ERROR": {
+            setErrorMsg('Error sending email. Please try again later.');
+            break;
+          }
+          case "FULL_NAME_VALIDATION_FAILURE": {
+            setErrorMsg('Please check your full name. It must be at least 2 characters long.');
+            break;
+          }
+          case "EMAIL_VALIDATION_FAILURE": {
+            setErrorMsg('Please check your email address.');
+            break;
+          }
+          case "MESSAGE_VALIDATION_FAILURE": {
+            setErrorMsg('Please check your message. It must be at least 10 characters');
+            break;
+          }
+        }
+      }
+    }
+
     return (
         <div className="w-full">
             <h1 className="text-2xl sm:text-3xl font-bold mb-3 sm:mb-4">Send us a message</h1>
             <p className="text-gray-600 mb-6 sm:mb-8 text-sm sm:text-base">
                 Have questions about pricing, plans, or our Awesome Product? Fill out the form and we will be in touch shortly
             </p>
-
-            {/* <form action={sendEmailAction} className="gap-2 p-8 flex justify-center">
-                <input type="text" name="toAddress" placeholder="To Adrress" className="p-2 border-2 rounded-md flex-grow"/>
-                <button type="submit" className="bg-blue-700 text-white p-2 rounded-md">Send Test Email</button>
-            </form> */}
-
-            <form  action={contactUsSubmissionAction}className="space-y-4 sm:space-y-6">
+            <form onSubmit={handleFormSubmit} ref={formRef} className="space-y-4 sm:space-y-6">
                 <div>
                     <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">
                         Full name <span className="text-red-500">*</span>
@@ -63,6 +96,12 @@ const ContactUsForm = () => {
                     Submit
                 </button>
             </form>
+
+            {/* ERROR MESSAGE */}
+            {errorMsg && <div className="pb-2 rounded-lg text-red-500 text-center italic">{errorMsg}</div>}
+
+            {/* SUCCESS MESSAGE */}
+            {successMsg && <div className="pb-2 rounded-lg text-green-500 text-center italic">{successMsg}</div>}
         </div>
     );
 };

@@ -1,7 +1,6 @@
 "use client"
 import { Mail } from 'lucide-react'
-import Footer from '@/components/Footer'
-import { getStartedSubmissionAction } from '@/actions/sendEmailAction'
+import { getStartedSubmissionAction } from '@/actions/appActions'
 
 export default function SignUpForm() {
   return (
