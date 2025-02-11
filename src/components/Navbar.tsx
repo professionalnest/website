@@ -1,7 +1,7 @@
 "use client"
 import React, { useState } from 'react'
 
-function Navbar() {
+export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -9,81 +9,68 @@ function Navbar() {
     };
 
     return (
-        <div className='bg-black p-3'>
+        <div className='bg-black p-2 text-color-primary font-extrabold'>
             <nav className='container mx-auto'>
                 <div className='flex items-center text-lg font-semibold justify-between '>
-                <img
-                    className='h-14 ml-4 mt-2'
-                    src="https://assets.softr-files.com/applications/e9036e53-b096-4bc0-8e6c-d598c06d24be/assets/0cd3f647-f48b-480b-9139-7e3e7bdc5184.png"
-                    alt="Logo"
-                    style={{ height: '50px', marginRight: '20px' }}
-                    onClick={() => window.location.reload()}
-                     />
+                    {/* COMPANY LOGO */}
+                    <a href="/">
+                        <img
+                            src="/logo.png"
+                            alt="ProNest Logo"
+                            style={{ height: '65px', marginRight: '20px' }}
+                            />
+                    </a>
 
-                <button
-                    className='md:hidden text-maincolor p-2'
-                    onClick={toggleMenu}
-                >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    {/* MOBILE VIEW - HAMBURGER MENU BUTTON */}
+                    <button
+                        className='md:hidden text-maincolor p-2'
+                        onClick={toggleMenu}
                     >
-                        {isOpen ? (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M6 18L18 6M6 6l12 12" />
-                        ) : (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16" />
-                        )}
-                    </svg>
-                </button>
+                        <svg
+                            className="w-6 h-6"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            {isOpen ? (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M6 18L18 6M6 6l12 12" />
+                            ) : (
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            )}
+                        </svg>
+                    </button>
 
-                <ul className='hidden md:flex items-center justify-evenly m-3 mr-6 space-x-8'>
-                    <li className='m-3 text-maincolor hover:text-white transition-colors'>
-                        <a href="/">Home</a>
-                    </li>
-                    <li className='m-3 text-maincolor hover:text-white transition-colors'>
-                        <a href="/about">About</a>
-                    </li>
-                    <li className='m-3 text-maincolor hover:text-white transition-colors'>
-                        <a href="/contact">Contact Us</a>
-                    </li>
-                    <li>
-                        <button className='bg-maincolor hover:bg-opacity-80 rounded-xl p-3 transition-colors' onClick={()=> window.location.href = '/getstarted'} >
+                    {/* DESKTOP VIEW - MENU ITEMS */}
+                    <ul className='hidden md:flex items-center justify-evenly m-3 mr-6 space-x-8 gap-3'>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <button className='rounded-lg px-4 py-2 bg-color-primary' onClick={()=> window.location.href = '/getstarted'} >
                             Get Started
                         </button>
-                    </li>
-                </ul>
-            </div>
-            <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
-            <ul className='flex flex-col items-center space-y-4 mt-4 justify-between'>
-                    <li className='text-maincolor hover:text-white transition-colors'>
-                        <a href="/">Home</a>
-                    </li>
-                    <li className='text-maincolor hover:text-white transition-colors'>
-                        <a href="/about">About</a>
-                    </li>
-                    <li className='text-maincolor hover:text-white transition-colors'>
-                        <a href="/contact">Contact Us</a>
-                    </li>
-                    
-                    <button className='bg-maincolor hover:bg-opacity-80 rounded-xl p-3 transition-colors' onClick={()=> window.location.href = '/getstarted'} >
+                    </ul>
+                </div>
+
+                {/* MOBILE VIEW - MENU ITEMS */}
+                <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
+                    <ul className='flex flex-col items-center space-y-4 mt-4 justify-between'>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
+                        <button className='rounded-lg p-3 bg-color-primary w-full' onClick={()=> window.location.href = '/getstarted'} >
                             Get Started
-                    </button>
-                </ul>
+                        </button>
+                    </ul>
                 </div>
             </nav>
         </div>
-    
     )
 }
-
-export default Navbar;
