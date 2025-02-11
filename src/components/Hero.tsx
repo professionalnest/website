@@ -4,26 +4,31 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between px-4 md:px-12 py-8 md:py-16 bg-white">
-      <div className="max-w-xl w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-        <h1 className="text-3xl md:text-5xl text-black font-bold mb-4 md:mb-6">
-          Save Big on Your <br />Favorite AI Tools
+    <div className="container m-auto flex flex-col md:flex-row items-center justify-between py-8 md:py-20 gap-8">
+      {/* TEXT SIDE */}
+      <div className="max-w-xl w-full md:w-2/5 text-center md:text-left h-full flex flex-col gap-14">
+
+        {/* HERO TITLE */}
+        <h1 className="text-3xl md:text-6xl font-bold leading-7">
+          Save Big on Your Favorite AI Tools
         </h1>
-        <br />
-        <p className="text-lg md:text-xl text-gray-500 mb-6 md:mb-8 font-nunito px-4 md:px-0">
+
+        {/* HERO SUBTITLE */}
+        <p className="text-lg md:text-2xl text-gray-500 font-nunito">
           Unlock huge discounts up to 50% off on the hottest artificial intelligence tools!
         </p>
-        <Link 
-          href="/getstarted" 
-          className="px-6 md:px-8 py-3 bg-maincolor text-black rounded-lg hover:bg-yellow-500 transition-colors inline-block"
-        >
-          Get Started
-        </Link>
+
+        {/* CALL TO ACTION */}
+        <div>
+        <Link href="/getstarted" className="px-6 md:px-8 py-4 bg-color-primary rounded-lg font-extrabold">Get Started</Link>
+        </div>
       </div>
-      <div className="relative w-full md:w-1/2">
-        <div className="relative w-full h-64 md:h-96">
+
+      {/* IMAGE SIDE */}
+      <div className="w-full md:w-3/5 p-2">
+        <div className="h-full">
           <Image
-            src="https://softr-assets-eu-shared.s3.eu-central-1.amazonaws.com/illustrations/rosa/guy-with-charts.svg"
+            src="/guy-with-charts.svg"
             alt="AI Tools illustration"
             width={600}
             height={500}
