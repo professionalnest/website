@@ -78,7 +78,6 @@ export default function SignUpForm() {
       </form>
       
     </div>
-    <Footer/>
     </div>
   )
 }

@@ -11,7 +11,6 @@ export default function Home() {
       <ToolGrid/>
       <WhyChose/>
       <BrowseDirectoryC2A />
-      <Footer/>
     </>
   );
 }
