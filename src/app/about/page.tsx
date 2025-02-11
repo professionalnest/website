@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Banner from '@/components/Banner'
 import TeamPanel from '@/components/TeamPanel'
 import ConnectWithUs from '@/components/ConnectWithUs'
