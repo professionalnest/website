@@ -52,7 +52,7 @@ const Navbar = () => {
                     <ul className='hidden md:flex items-center justify-evenly m-3 mr-6 space-x-8 gap-3'>
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
                         <button className='rounded-lg px-4 py-2 bg-color-primary' onClick={()=> window.location.href = '/getstarted'} >
                             Get Started
                         </button>
@@ -64,7 +64,7 @@ const Navbar = () => {
                     <ul className='flex flex-col items-center space-y-4 mt-4 justify-between'>
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
                         <button className='rounded-lg p-3 bg-color-primary w-full' onClick={()=> window.location.href = '/getstarted'} >
                             Get Started
                         </button>
