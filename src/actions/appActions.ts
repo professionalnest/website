@@ -57,6 +57,10 @@ export const contactUsSubmissionAction = async (formData:FormData) => {
             errorCode: 'MESSAGE_VALIDATION_FAILURE'
         };
     }
+    return {
+        status: false,
+        errorCode: 'UNKOWN_ERROR'
+    }
 }
 
 export const getStartedSubmissionAction = async (formData:FormData) => {
@@ -83,11 +87,24 @@ export const getStartedSubmissionAction = async (formData:FormData) => {
         const emailSubject = 'GET STARTED FORM SUBMISSION ON PRONEST WEBSITE';
         const emailSendStatus = await sendEmailAction(emailSubject, emailBody);
         return emailSendStatus;
-    } else {
+    } else if (fullNameValidation != true) {
         return {
             status: false,
-            errorCode: 'USER_INPUT_VALIDATION_FAILURE',
-            errors: {fullNameValidation, emailValidation, phoneValidation}
+            errorCode: 'FULL_NAME_VALIDATION_FAILURE'
         };
+    } else if (emailValidation != true) {
+        return {
+            status: false,
+            errorCode: 'EMAIL_VALIDATION_FAILURE'
+        };
+    } else if (phoneValidation != true) {
+        return {
+            status: false,
+            errorCode: 'PHONE_VALIDATION_FAILURE'
+        };
+    }
+    return {
+        status: false,
+        errorCode: 'UNKOWN_ERROR'
     }
 }

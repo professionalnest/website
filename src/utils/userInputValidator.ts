@@ -4,7 +4,7 @@ const fullNameSchema = z.string().min(2).max(255);
 const emailSchema = z.string().email();
 const messageSchema = z.string().min(10);
 const phoneSchema = z.string().optional().refine(val => {
-  const phoneRegex = /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4}$/;
+  const phoneRegex = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{2,3}\)?[\-\.\ \\\/]?){3,4})(?:[\-\.\ \\\/]?(?:\d{3,4}))$/;
   return phoneRegex.test(val!);
 });
 
