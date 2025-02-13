@@ -1,5 +1,6 @@
 import { Heart } from 'lucide-react'
 import React from 'react'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -27,9 +28,9 @@ const Footer = () => {
           <div className='text-white text-center mb-6 sm:mb-0'>
             <h1 className='font-bold mb-4 text-base md:text-lg'>Company</h1>
             <ul className='space-y-2'>
-              <li className='text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base'>About Us</li>
-              <li className='text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base'>Products</li>
-              <li className='text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base'>Blogs</li>
+              <li><a href='' className='text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base'>About Us</a></li>
+              <li><a href='' className='text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base'>Products</a></li>
+              <li><a href='' className='text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base'>Blogs</a></li>
             </ul>
           </div>
 
@@ -48,7 +49,7 @@ const Footer = () => {
             <h1 className='font-bold mb-4 text-base md:text-lg'>Legal</h1>
             <ul className='space-y-2'>
               <li><a href='' className='text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base'>Terms of Service</a></li>
-              <li><a href='' className='text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base'>Privacy Policy</a></li>
+              <li><Link href="/privacy-policy" className="text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base">Privacy Policy</Link></li>
               <li><a href='' className='text-blue-600 hover:text-blue-400 transition-colors text-sm md:text-base'>Affiliate Disclosures</a></li>
             </ul>
           </div>
