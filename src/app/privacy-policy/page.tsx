@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">1. Introduction</h2>
         <p>
-          Pronest ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services. By using Pronest, you agree to the terms outlined in this policy.
+          Pronest (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our services. By using Pronest, you agree to the terms outlined in this policy.
         </p>
       </section>
 
