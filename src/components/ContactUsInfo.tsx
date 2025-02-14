@@ -5,7 +5,7 @@ const ContactUsInfo = () => {
         <div className="flex flex-row md:flex-col justify-around text-center">
             <div className="mb-8 sm:mb-12">
                 <h2 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-4">Email Us</h2>
-                <a  href="mailto:info@pronest.co.in">info@pronest.co.in</a>
+                <a href="mailto:info@pronest.co.in">info@pronest.co.in</a>
             </div>
 
             <div>
