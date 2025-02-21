@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="max-w-xl w-full md:w-2/5 text-center md:text-left h-full flex flex-col gap-12 md:gap-16">
 
         {/* HERO TITLE */}
-        <h1 className="text-4xl md:text-6xl font-bold leading-7">
+        <h1 className="text-4xl md:text-6xl font-bold leading-10 sm:leading-7"> 
           Save Big on Your Favorite AI Tools
         </h1>
 
