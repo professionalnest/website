@@ -4,8 +4,9 @@ const fullNameSchema = z.string().min(2).max(255);
 const emailSchema = z.string().email();
 const messageSchema = z.string().min(10);
 const phoneSchema = z.string().optional().refine(val => {
-  const phoneRegex = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{2,3}\)?[\-\.\ \\\/]?){3,4})(?:[\-\.\ \\\/]?(?:\d{3,4}))$/;
-  return phoneRegex.test(val!);
+    if (!val || val.trim() === "") return true; // Allow empty values
+    const phoneRegex = /^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{2,3}\)?[\-\.\ \\\/]?){3,4})(?:[\-\.\ \\\/]?(?:\d{3,4}))$/;
+    return phoneRegex.test(val);
 });
 
 const validateUserInputString = (zodStringSchema:z.ZodString, userInput:string) => {
