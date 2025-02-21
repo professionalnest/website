@@ -1,0 +1,24 @@
+name: Test Build on PR
+
+on:
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  build-pr-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel
+
+      - name: Pull Vercel Info from environment variables
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Display Build Output (Optional)
+        run: ls -l .vercel/output
