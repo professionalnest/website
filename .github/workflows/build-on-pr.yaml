@@ -5,11 +5,18 @@ on:
     branches:
       - '*'
 
+permissions:
+  pull-requests: read
+  contents: read
+
 jobs:
   build-pr-code:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request' && github.repository == github.event.pull_request.base.repo.full_name
     steps:
       - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install Vercel CLI
         run: npm install --global vercel
