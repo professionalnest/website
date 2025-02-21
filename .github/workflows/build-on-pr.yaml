@@ -21,14 +21,17 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Vercel CLI
-        run: npm install --global vercel
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '23'
+          cache: 'npm'
 
-      - name: Pull Vercel Info from environment variables
-        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Install dependencies
+        run: npm ci
 
-      - name: Build Project Artifacts
-        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+      - name: Run build command
+        run: npm run build
 
-      - name: Display Build Output (Optional)
-        run: ls -l .vercel/output
+      - name: Display build output (Optional)
+        run: ls -l dist
