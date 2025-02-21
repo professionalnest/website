@@ -32,6 +32,3 @@ jobs:
 
       - name: Run build command
         run: npm run build
-
-      - name: Display build output (Optional)
-        run: ls -l dist
