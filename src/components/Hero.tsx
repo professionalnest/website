@@ -5,7 +5,7 @@ import { C2ALabels, HeroComponentLabels } from "@/models/UIInterfaces";
 
 const Hero = ({labels, c2a}: {labels:HeroComponentLabels, c2a: C2ALabels}) => {
   return (
-    <div className="container m-auto flex flex-col md:flex-row items-center justify-between py-14 md:py-20 gap-14 md:px-0 px-12">
+    <div className="container m-auto flex flex-col md:flex-row items-center justify-between py-14 md:py-20 gap-14 px-12">
       {/* TEXT SIDE */}
       <div className="max-w-xl w-full md:w-2/5 text-center md:text-left h-full flex flex-col gap-12 md:gap-16">
 

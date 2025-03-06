@@ -2,7 +2,7 @@ import { WhyChooseComponentLabels } from "@/models/UIInterfaces";
 
 const WhyChooseComponent = ({labels}: {labels:WhyChooseComponentLabels}) => {
     return (
-        <section className="px-4 sm:px-12 py-8 sm:py-16">
+        <section className="px-12 py-8 sm:py-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 sm:mb-12">
                 {labels.title}
             </h2>
