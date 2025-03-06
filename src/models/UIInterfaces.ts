@@ -11,9 +11,12 @@ export interface WhyChooseComponentLabels {
 
 export interface HeroComponentLabels {
     title: string,
-    subtitle: string,
-    c2aText: string,
-    c2aLink: string
+    subtitle: string
+}
+
+export interface C2ALabels {
+    label: string,
+    url: string
 }
 
 export interface HomePageLabels {

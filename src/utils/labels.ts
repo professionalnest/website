@@ -1,11 +1,14 @@
-import { AboutPageLabels, HomePageLabels } from "@/models/UIInterfaces";
+import { AboutPageLabels, C2ALabels, HomePageLabels } from "@/models/UIInterfaces";
+
+export const c2aLabels:C2ALabels = {
+    "label": "Get Started",
+    "url": "/getstarted"
+}
 
 export const homePageLabels:HomePageLabels = {
     "hero": {
         "title": "Orchestrating Enterprise AI: From Chaos to Clarity",
-        "subtitle": "ProNest optimizes, secures, and streamlines AI investments for enterprises while empowering AI providers with robust sales and distribution channels.",
-        "c2aText": "Get Started",
-        "c2aLink": "/getstarted"
+        "subtitle": "ProNest optimizes, secures, and streamlines AI investments for enterprises while empowering AI providers with robust sales and distribution channels."
     },
     "whyChoose": {
         "title": "Why Choose ProNest?",
