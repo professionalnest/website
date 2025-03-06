@@ -1,3 +1,14 @@
+export interface WhyChooseProNestReason {
+    name: string,
+    description: string,
+    image: string
+}
+
+export interface WhyChooseComponentLabels {
+    title: string,
+    reasons: WhyChooseProNestReason[]
+}
+
 export interface HeroComponentLabels {
     title: string,
     subtitle: string,
@@ -6,7 +17,8 @@ export interface HeroComponentLabels {
 }
 
 export interface HomePageLabels {
-    hero: HeroComponentLabels
+    hero: HeroComponentLabels,
+    whyChoose: WhyChooseComponentLabels
 }
 
 export interface AboutPageLabels {

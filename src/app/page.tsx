@@ -9,7 +9,7 @@ export default function Home() {
     <>
       <Hero labels={homePageLabels.hero} />
       <ToolGrid/>
-      <WhyChose/>
+      <WhyChose labels={homePageLabels.whyChoose} />
       <BrowseDirectoryC2A />
     </>
   );
