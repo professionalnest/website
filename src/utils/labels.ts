@@ -29,6 +29,9 @@ export const homePageLabels:HomePageLabels = {
                 image: "/illustrations/girl-with-laptop-F0F0F4.svg",
             },
         ]
+    },
+    "c2aSection": {
+        "title": "Ready to get started with ProNest?"
     }
 };
 

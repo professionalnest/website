@@ -19,9 +19,14 @@ export interface C2ALabels {
     url: string
 }
 
+export interface C2ASectionComponentLabels {
+    title: string
+}
+
 export interface HomePageLabels {
     hero: HeroComponentLabels,
-    whyChoose: WhyChooseComponentLabels
+    whyChoose: WhyChooseComponentLabels,
+    c2aSection: C2ASectionComponentLabels
 }
 
 export interface AboutPageLabels {

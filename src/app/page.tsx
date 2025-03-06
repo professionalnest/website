@@ -1,7 +1,7 @@
 import WhyChose from "@/components/WhyChoose";
 import  Hero  from "@/components/Hero";
 import ToolGrid  from "@/components/ToolGrid";
-import BrowseDirectoryC2A from "@/components/BrowseDirectory";
+import C2ASection from "@/components/C2ASection";
 import { c2aLabels, homePageLabels } from "@/utils/labels";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero labels={homePageLabels.hero} c2a={c2aLabels} />
       <ToolGrid/>
       <WhyChose labels={homePageLabels.whyChoose} />
-      <BrowseDirectoryC2A />
+      <C2ASection labels={homePageLabels.c2aSection} c2a={c2aLabels} />
     </>
   );
 }
