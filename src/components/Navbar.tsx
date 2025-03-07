@@ -1,8 +1,8 @@
 "use client"
-import { C2ALabels } from '@/models/UIInterfaces';
 import React, { useState } from 'react'
+import C2AButton from './C2AButton';
 
-const Navbar = ({c2a}: {c2a: C2ALabels}) => {
+const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -54,9 +54,7 @@ const Navbar = ({c2a}: {c2a: C2ALabels}) => {
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <button className='rounded-lg px-4 py-2 bg-color-primary' onClick={()=> window.location.href = c2a.url} >
-                            {c2a.label}
-                        </button>
+                        <C2AButton />
                     </ul>
                 </div>
 
@@ -66,9 +64,7 @@ const Navbar = ({c2a}: {c2a: C2ALabels}) => {
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <button className='rounded-lg p-3 bg-color-primary w-full' onClick={()=> window.location.href = c2a.url} >
-                            {c2a.label}
-                        </button>
+                        <C2AButton />
                     </ul>
                 </div>
             </nav>

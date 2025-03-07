@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
-import { C2ALabels, HeroComponentLabels } from "@/models/UIInterfaces";
+import { HeroComponentLabels } from "@/models/UIInterfaces";
+import C2AButton from "./C2AButton";
 
-const Hero = ({labels, c2a}: {labels:HeroComponentLabels, c2a: C2ALabels}) => {
+const Hero = ({labels}: {labels:HeroComponentLabels}) => {
   return (
     <div className="container m-auto flex flex-col md:flex-row items-center justify-between py-14 md:py-20 gap-14 px-12">
       {/* TEXT SIDE */}
@@ -20,9 +20,7 @@ const Hero = ({labels, c2a}: {labels:HeroComponentLabels, c2a: C2ALabels}) => {
         </p>
 
         {/* CALL TO ACTION */}
-        <div>
-        <Link href={c2a.url} className="px-6 md:px-8 py-4 bg-color-primary rounded-lg font-extrabold">{c2a.label}</Link>
-        </div>
+        <C2AButton />
       </div>
 
       {/* IMAGE SIDE */}
