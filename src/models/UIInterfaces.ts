@@ -23,10 +23,21 @@ export interface C2ASectionComponentLabels {
     title: string
 }
 
+export interface ValueProposition {
+    userType: string,
+    title: string,
+    description: string,
+    image: string
+}
+
 export interface HomePageLabels {
     hero: HeroComponentLabels,
     whyChoose: WhyChooseComponentLabels,
-    c2aSection: C2ASectionComponentLabels
+    c2aSection: C2ASectionComponentLabels,
+    valuePropositionsSection: {
+        title: string,
+        valuePropositions: ValueProposition[]
+    }
 }
 
 export interface AboutPageLabels {
