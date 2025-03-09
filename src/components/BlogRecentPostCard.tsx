@@ -7,7 +7,7 @@ const RecentPostCard = ({blogPost}:{blogPost:BlogPost}) => {
         <Link href={`/blog/${blogPost.id}`}>
             <div className={styles.postCard}>
                 <div className={styles.postContent}>
-                    <img src={blogPost.img} alt={blogPost.title} />
+                    {/* <img src={blogPost.img} alt={blogPost.title} /> */}
                     <h3>{blogPost.title}</h3>
                     <p>{blogPost.summary}</p>
                 </div>
