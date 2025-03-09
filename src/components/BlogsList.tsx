@@ -31,7 +31,7 @@ const BlogsList = ({categories, blogPosts}:{categories:string[], blogPosts:BlogP
   return (
     <section className={styles.contentContainer}>
       {/* All Posts */}
-      <div className={styles.blogPosts}>
+      <div className={styles.allPosts}>
         <h2>All Posts</h2>
         {displayedPosts.map((post, index) => (
           <Link href={`/blog/${post.id}`} key={index}>
