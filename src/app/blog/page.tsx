@@ -20,7 +20,7 @@ export default function Home() {
 
       <BlogsList categories={blogCategories} blogPosts={allBlogPosts} />
       
-      <SubscribeNewsletterC2A />
+      {/* <SubscribeNewsletterC2A /> */}
 
     </main>
   );

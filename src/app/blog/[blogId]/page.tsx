@@ -44,7 +44,7 @@ export default function BlogPostPage() {
                 
                 <OtherArticles blogPosts={recentBlogPosts}/>
 
-                <SubscribeNewsletterC2A />
+                {/* <SubscribeNewsletterC2A /> */}
             </aside>
 
         </div>
