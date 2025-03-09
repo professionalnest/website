@@ -29,7 +29,7 @@ const BlogsList = ({categories, blogPosts}:{categories:string[], blogPosts:BlogP
   };
 
   return (
-    <section className={styles.contentContainer}>
+    <section className={`mb-10 ${styles.contentContainer}`}>
       {/* All Posts */}
       <div className={styles.allPosts}>
         <h2>All Posts</h2>
