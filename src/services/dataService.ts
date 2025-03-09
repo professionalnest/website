@@ -44,3 +44,8 @@ export const getBlogCategories = ():string[] => {
     defaultCategories.forEach(category => tagsSet.add(category));
     return Array.from(tagsSet);
 }
+
+export const getBlogPostById = (blogId:number):BlogPost => {
+    initializeBlogsIfEmpty();
+    return allBlogsSorted.find(blog => blog.id === blogId) as BlogPost;
+}
