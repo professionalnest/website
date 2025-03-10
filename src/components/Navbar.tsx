@@ -1,5 +1,6 @@
 "use client"
 import React, { useState } from 'react'
+import C2AButton from './C2AButton';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -53,9 +54,7 @@ const Navbar = () => {
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <button className='rounded-lg px-4 py-2 bg-color-primary' onClick={()=> window.location.href = '/getstarted'} >
-                            Get Started
-                        </button>
+                        <C2AButton />
                     </ul>
                 </div>
 
@@ -65,9 +64,7 @@ const Navbar = () => {
                         <li><a href="/">Home</a></li>
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <button className='rounded-lg p-3 bg-color-primary w-full' onClick={()=> window.location.href = '/getstarted'} >
-                            Get Started
-                        </button>
+                        <C2AButton />
                     </ul>
                 </div>
             </nav>

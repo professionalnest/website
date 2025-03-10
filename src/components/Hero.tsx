@@ -1,31 +1,32 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { HeroComponentLabels } from "@/models/UIInterfaces";
+import C2AButton from "./C2AButton";
 
-const Hero = () => {
+const Hero = ({labels}: {labels:HeroComponentLabels}) => {
   return (
-    <div className="container m-auto flex flex-col md:flex-row items-center justify-between py-14 md:py-20 gap-14 md:px-0 px-12">
+    <div className="container m-auto flex flex-col md:flex-row items-center justify-between py-14 md:py-20 gap-14 px-12">
       {/* TEXT SIDE */}
-      <div className="max-w-xl w-full md:w-2/5 text-center md:text-left h-full flex flex-col gap-12 md:gap-16">
+      <div className="h-full w-full text-center mx-auto lg:text-left lg:w-3/5 max-w-2xl flex flex-col gap-12 md:gap-16">
 
         {/* HERO TITLE */}
         <h1 className="text-4xl md:text-6xl font-bold leading-10 sm:leading-7"> 
-          Save Big on Your Favorite AI Tools
+          {labels.title}
         </h1>
 
         {/* HERO SUBTITLE */}
         <p className="text-2xl md:text-3xl text-gray-500 font-nunito">
-          Unlock huge discounts up to 50% off on the hottest artificial intelligence tools!
+          {labels.subtitle}
         </p>
 
         {/* CALL TO ACTION */}
         <div>
-        <Link href="/getstarted" className="px-6 md:px-8 py-4 bg-color-primary rounded-lg font-extrabold">Get Started</Link>
+          <C2AButton />
         </div>
       </div>
 
       {/* IMAGE SIDE */}
-      <div className="w-full md:w-3/5 p-2">
+      <div className="p-2 hidden lg:block lg:w-2/5 ">
         <div className="h-full justify-self-end">
           <Image
             src="/illustrations/guy-with-charts.svg"
