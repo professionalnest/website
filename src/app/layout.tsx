@@ -3,7 +3,6 @@ import "./globals.css";
 import { PostHogProvider } from "@/contexts/posthogContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { c2aLabels } from "@/utils/labels";
 
 export const metadata: Metadata = {
   title: "Pronest",
@@ -19,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <PostHogProvider>
-          <Navbar c2a={c2aLabels}/>
+          <Navbar />
           {children}  
           <Footer/>
         </PostHogProvider>
